@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NekoNyaChan · 浏览器里的小猫娘链 🐾 0 gas 随便玩喵</title>
+<meta name="description" content="NekoNyaChan:一条跑在浏览器里的小小区块链,0 gas、不用钱包,挖区块生数以亿计名字的小猫娘,还能养喵。">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="logo">
+    <span class="logo-ear"></span>
+    <span class="logo-ear right"></span>
+    <h1>NekoNyaChan<span class="miao">喵</span></h1>
+    <p class="slogan">区块链生小猫娘 · <b id="net-tag">0 gas</b></p>
+  </div>
+  <div class="top-stats">
+    <div class="stat-chip"><b id="block-count">0</b> 区块</div>
+    <div class="stat-chip"><b id="hutch-count">0</b> 猫娘</div>
+    <div class="stat-chip">GAS <b>0 喵币</b></div>
+  </div>
+</header>
+
+<main class="cols">
+  <!-- 左:生猫娘 + 养猫娘 -->
+  <section class="panel cat-panel">
+    <h2>🐾 我的猫娘</h2>
+    <div class="cat-view" id="cat-svg"></div>
+    <div class="cat-meta">
+      <div class="cat-name-line">
+        <span id="cat-name">——</span>
+        <span id="cat-title" class="cat-title"></span>
+        <span id="cat-rarity" class="rarity"></span>
+      </div>
+      <div class="cat-traits">
+        <span id="cat-trait"></span>
+        <span id="cat-personality"></span>
+      </div>
+      <div class="cat-facts">
+        <span id="cat-level">Lv.0</span>
+        <span id="cat-actions"></span>
+        <span id="cat-birth"></span>
+      </div>
+    </div>
+    <div id="stats" class="stats"></div>
+    <div id="actions" class="actions"></div>
+    <button id="birth-btn" class="birth-btn">🌸 挖一块区块,生一只猫娘!(0 gas)</button>
+    <div id="mine-info" class="mine-info"></div>
+  </section>
+
+  <!-- 右:名字实验室 + 猫窝 + 区块浏览器 -->
+  <div class="right-col">
+    <section class="panel name-panel">
+      <h2>🧪 名字实验室</h2>
+      <p class="hint">名字空间 <b id="name-space"></b> 个组合(属性前缀 + 实体前缀 + 昵称后缀),撞名概率约等于中彩票喵～</p>
+      <div class="name-row">
+        <span id="name-lab" class="name-lab">点我随机一个奇怪的名字喵</span>
+        <button id="name-lab-btn" class="mini-btn">🎲 换一个</button>
+        <button id="name-lab-copy" class="mini-btn">✏️ 上链改名</button>
+      </div>
+    </section>
+
+    <section class="panel hutch-panel">
+      <h2>🏠 猫窝 <span class="cnt" id="hutch-count2">0</span></h2>
+      <div id="hutch-grid" class="hutch-grid"></div>
+    </section>
+
+    <section class="panel block-panel">
+      <h2>⛓ 区块浏览器 <span class="cnt" id="block-count2">0</span></h2>
+      <div id="hash-chain" class="hash-chain"></div>
+      <div id="block-list" class="block-list"></div>
+      <div class="block-tools">
+        <button id="verify-btn" class="mini-btn">🔍 验链</button>
+        <span id="verify-result" class="verify-result"></span>
+      </div>
+      <div class="log-wrap"><h3>📜 喵语日志</h3><ul id="log" class="log"></ul></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>NekoNyaChain 是一条<b>跑在浏览器里的小小区块链</b>喵:SHA-256 工作量证明(前导 3 个零)、哈希串联、交易上链、数据存 IndexedDB。0 gas、不用钱包、断网也能玩喵。</p>
+  <p>想和大家一起玩?把整个文件夹丢到 <b>GitHub Pages / Netlify / Vercel</b> 上就是公网啦!右键 → 另存为,或者打包分享也行喵。</p>
+  <button id="reset-btn" class="reset-btn">💥 清空整条链重来(危险喵)</button>
+</footer>
+
+<script src="names.js"></script>
+<script src="catgirl.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
