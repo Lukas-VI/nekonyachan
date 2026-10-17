@@ -174,9 +174,11 @@
   function renderBlocks() {
     var bs = chain.blocks.slice().reverse().slice(0, 20);
     el.blockCount.textContent = chain.blocks.length;
-    el.hashChain.textContent = chain.blocks.length
+    el.hashChain.textContent = chain.blocks.length >= 2
       ? chain.blocks[0].h.slice(0, 10) + ' → ' + chain.blocks[1].h.slice(0, 10) + ' → …'
-      : '';
+      : chain.blocks.length === 1
+        ? chain.blocks[0].h.slice(0, 10) + ' (创世喵)'
+        : '';
     el.blocks.innerHTML = bs.map(function (b) {
       var tx = b.tx;
       var what = tx.t === 'genesis' ? '🌸 创世' :
